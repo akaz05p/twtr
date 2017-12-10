@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 import os
 import tweepy
+from datetime import datetime
 
 # Create variables for each key, secret, token
 consumer_key = os.environ['CONSUMER_KEY']
@@ -18,5 +19,5 @@ for tweet in public_tweets:
     print tweet.text.encode('utf-8')
     
 # Write a tweet to push to our Twitter account
-tweet = 'Hello, world!'
+tweet = 'Hello, world! The time now is {}'.format(datetime.now().time())
 api.update_status(status=tweet)
