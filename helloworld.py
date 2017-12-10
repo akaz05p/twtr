@@ -15,7 +15,7 @@ api = tweepy.API(auth)
 
 public_tweets = api.home_timeline()
 for tweet in public_tweets:
-    print tweet.text
+    print tweet.text.encode('utf-8')
     
 # Write a tweet to push to our Twitter account
 tweet = 'Hello, world!'
