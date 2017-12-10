@@ -15,8 +15,10 @@ auth.set_access_token(access_token, access_token_secret)
 api = tweepy.API(auth)
 
 public_tweets = api.home_timeline()
+f = open('timeline.txt','w')
 for tweet in public_tweets:
-    print tweet.text.encode('utf-8')
+    f.write(tweet.text.encode('utf-8'))
+f.close()
     
 # Write a tweet to push to our Twitter account
 tweet = 'Hello, world! The time now is {}'.format(datetime.now().time())
