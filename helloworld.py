@@ -16,10 +16,10 @@ api = tweepy.API(auth)
 
 public_tweets = api.home_timeline()
 f = open('reporttimeline.html','w')
-f.write('<html><head><style>table, th, td {border: 1px solid black;}</style><table width="100%"></style></head><body>')
+f.write('<html><head><style>table, th, td {border: 1px solid black;}</style><table width="100%"></style></head><body>\n')
 
 for tweet in public_tweets:
-  f.write('<tr><td><br>{}<br></td></tr>\n'.format(tweet.text.encode('utf-8')))
+  f.write('<tr><td>{}</td></tr>\n'.format(tweet.text.encode('utf-8')))
 
 f.write('</table></body></html>')
 f.close()
