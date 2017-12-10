@@ -1,11 +1,12 @@
 #!/usr/bin/env python
+import os
 import tweepy
 
 # Create variables for each key, secret, token
-consumer_key = 'your_consumer_key'
-consumer_secret = 'your_consumer_secret'
-access_token = 'your_access_token'
-access_token_secret = 'your_access_token_secret'
+consumer_key = os.environ['CONSUMER_KEY']
+consumer_secret = os.environ['CONSUMER_SECRET']
+access_token = os.environ['ACCESS_TOKEN']
+access_token_secret = os.environ['ACCESS_SECRET']
 
 # Set up OAuth and integrate with API
 auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
