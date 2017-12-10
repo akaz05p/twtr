@@ -16,9 +16,9 @@ api = tweepy.API(auth)
 
 public_tweets = api.home_timeline()
 f = open('timeline.html','w')
-f.write('<table style="width:50%">')
+f.write('<table width="480">')
 for tweet in public_tweets:
-  f.write('<tr>{}</tr>'.format(tweet.text.encode('utf-8')))
+  f.write('<tr><td>{}</td></tr>'.format(tweet.text.encode('utf-8')))
 f.write('</table>')
 f.close()
     
