@@ -19,7 +19,7 @@ f = open(os.environ['HTML_REPORT'],'w')
 f.write('<!DOCTYPE html><html><head><style>table,th,td{border:1px solid black;}</style></head><body><table width="100%">')
 
 for tweet in public_tweets:
-  f.write('<tr><td><br>{}<hr></td></tr>\n'.format(tweet.text.encode('utf-8')))
+  f.write('<tr><td><hr>{}<hr></td></tr>\n'.format(tweet.text.encode('utf-8')))
 
 f.write('</table></body></html>')
 f.close()
