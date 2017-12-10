@@ -16,10 +16,12 @@ api = tweepy.API(auth)
 
 public_tweets = api.home_timeline()
 f = open('timeline.html','w')
-f.write('<style>table, th, td {border: 1px solid black;}</style><table width="480">')
+f.write('<html><head><style>table, th, td {border: 1px solid black;}</style><table width="480"></style></head><body>')
+
 for tweet in public_tweets:
   f.write('<tr><td>{}</td></tr>'.format(tweet.text.encode('utf-8')))
-f.write('</table>')
+
+f.write('</table></body></html>')
 f.close()
     
 # Write a tweet to push to our Twitter account
